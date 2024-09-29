@@ -1,0 +1,20 @@
+<form action="/customers" method="POST">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  />
+  <div>
+    <label for="shopname"
+      >Shop Name: <input id="shopname" name="shopname" type="text"
+    /></label>
+  </div>
+
+  <div>
+    <label for="password"
+      >Password: <input type="password" name="password" id="password"
+    /></label>
+  </div>
+
+  <input type="submit" value="Create" />
+</form>
