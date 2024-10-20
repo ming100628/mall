@@ -1,0 +1,15 @@
+<%= @cookies %>
+<form action="/logins" method="POST">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+  />
+  <div>
+    <input name="username" type="text" />
+  </div>
+  <div>
+    <input name="password" type="text" />
+  </div>
+  <div><input type="submit" value="Submit" /></div>
+</form>

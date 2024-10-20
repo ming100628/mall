@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    Customer.create(username: params[:shopname], password_hash: params[:password])
+    Customer.create(username: params[:shopname], password: params[:password])
     redirect_to '/customers'
   end
 end
