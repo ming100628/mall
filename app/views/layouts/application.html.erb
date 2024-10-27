@@ -11,7 +11,17 @@
 
   <body>
     <!-- prettier-ignore -->
-    <%= current_user %>
-    <%= yield %>
+    <% if current_user %>
+    <%= current_user.username %>
+    <form action="/logins/null" method="POST">
+      <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>"
+      />
+      <input type="hidden" value="delete" name="_method" />
+      <button>Log Out</button>
+    </form>
+    <% end %> <%= yield %>
   </body>
 </html>

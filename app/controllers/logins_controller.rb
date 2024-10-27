@@ -13,4 +13,9 @@ class LoginsController < ApplicationController
 
 
   end
+
+  def destroy
+    cookies.delete :session_hash
+    redirect_to '/'
+  end
 end

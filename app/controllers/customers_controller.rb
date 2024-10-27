@@ -8,7 +8,8 @@ class CustomersController < ApplicationController
   end
 
   def create
-    Customer.create(username: params[:shopname], password: params[:password])
+    customer = Customer.create(username: params[:shopname], password: params[:password], session_hash: SecureRandom.hex(100))
+    cookies[:session_hash] = customer.session_hash
     redirect_to '/customers'
   end
 end
