@@ -1,0 +1,2 @@
+module ShopLoginsHelper
+end

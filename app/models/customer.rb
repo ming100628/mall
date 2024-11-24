@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
   require 'bcrypt'
+  after_create :add_session_hash
 
   def password=(password)
     update(password_hash: BCrypt::Password.create(password))
@@ -7,5 +8,9 @@ class Customer < ApplicationRecord
 
   def is_password?(password)
     BCrypt::Password.new(password_hash) == password
+  end
+
+  def add_session_hash
+    update(session_hash: SecureRandom.base64(24))
   end
 end

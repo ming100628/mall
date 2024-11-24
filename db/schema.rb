@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_20_011605) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_10_013858) do
   create_table "customers", force: :cascade do |t|
     t.string "username"
     t.string "password_hash"
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_20_011605) do
     t.string "password_hash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "session_hash"
   end
 
 end
